@@ -9,6 +9,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 
 
@@ -25,7 +26,8 @@ const core = [HeaderComponent, FooterComponent];
     NzButtonModule,
     NzModalModule,
     NzListModule,
-    NzInputModule
+    NzInputModule,
+    NzMessageModule
   ],
   exports: core,
 })
