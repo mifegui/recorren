@@ -20,5 +20,7 @@ sed -i 's|.*eentregasUrl:.*|  eentregasUrl: "'$entregasUrl'",|g' src/environment
 sed -i 's|.*erecorrenUrl:.*|  erecorrenUrl: "'$recorrenUrl'",|g' src/environments/environment.ts
 sed -i 's|.*erecorrenUrl:.*|  erecorrenUrl: "'$recorrenUrl'",|g' src/environments/environment.prod.ts
 
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 #yes | npm install
 npm start -- --port 8080
