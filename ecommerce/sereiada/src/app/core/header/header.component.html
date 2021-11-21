@@ -33,7 +33,7 @@
   nzTitle="Confirme seus dados e seu pedido..."
   nzCentered
   (nzOnCancel)="modal.close()"
-  (nzOnOk)="buy(); modal.close(); "
+  (nzOnOk)="buy(); modal.close()"
 >
   <ng-container *nzModalContent>
     <nz-list nzBordered>
@@ -47,7 +47,7 @@
     <br />
     <br />
     <h3>Seus dados</h3>
-    <input nz-input nz placeholder="Email" />
+    <input [(ngModel)]="email" type="email" nz-input placeholder="Email" />
     <br />
     <br />
     <textarea nz-input textarea rows="4" placeholder="Endereço"></textarea>

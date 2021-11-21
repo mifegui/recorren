@@ -10,8 +10,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMessageModule } from 'ng-zorro-antd/message';
-
-
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 
 const core = [HeaderComponent, FooterComponent];
@@ -27,7 +27,9 @@ const core = [HeaderComponent, FooterComponent];
     NzModalModule,
     NzListModule,
     NzInputModule,
-    NzMessageModule
+    NzMessageModule,
+    BrowserModule,
+    FormsModule
   ],
   exports: core,
 })

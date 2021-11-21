@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Observable, of } from 'rxjs';
+import { ProductRequestsService } from 'src/app/product-interaction/product-requests.service';
 import { ProductSelectionService } from 'src/app/product-interaction/product-selection.service';
 import { Product } from 'src/app/shared/models/product';
 
@@ -10,10 +11,12 @@ import { Product } from 'src/app/shared/models/product';
   styleUrls: ['./header.component.less'],
 })
 export class HeaderComponent implements OnInit {
+  email: string = '';
   prods: Observable<Product[]> = of([]);
   constructor(
     private productServ: ProductSelectionService,
-    private msgServ: NzMessageService
+    private msgServ: NzMessageService,
+    private orderServ: ProductRequestsService
   ) {}
 
   ngOnInit(): void {
@@ -23,16 +26,27 @@ export class HeaderComponent implements OnInit {
   removeProduct(index: number) {
     this.productServ.removeProduct(index);
   }
-  buy() {
+  async buy() {
     const id = this.msgServ.loading('Fazendo compra', {
       nzDuration: 0,
     }).messageId;
 
-    setTimeout(() => {
-      this.msgServ.remove(id);
-      this.msgServ.create('success', 'Compra realizada com sucesso');
-    }, 2500);
+    let err = null;
+    await this.orderServ
+      .buyProducts({
+        customerEmail: this.email,
+        products: this.productServ.currentlySelectedProducts,
+      })
+      .toPromise()
+      .catch((e) => {
+        err = e;
+      });
+
+    this.msgServ.remove(id);
+    if (err) this.msgServ.create('error', JSON.stringify(err));
+    else this.msgServ.create('success', 'Compra realizada com sucesso');
   }
+
   getTotal() {
     return this.productServ.currentlySelectedProducts.reduce(
       (acc, val) => {
