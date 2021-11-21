@@ -11,6 +11,6 @@ cd recorren/erecorren
 
 pip3 install Flask
 
-sed -i 's|^eentregasUrl.*|entregasUrl="'$url'"|g' recorra.py
+sed -i 's|^entregasUrl.*|entregasUrl="'$url'"|g' recorra.py
 
 python3 recorra.py

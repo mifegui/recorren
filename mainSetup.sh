@@ -23,6 +23,6 @@ scp -i $sshKey ecommerce/setup.sh ${ecommerceSsh}:
 scp -i $sshKey eentregas/setup.sh ${entregasSsh}:
 scp -i $sshKey erecorren/setup.sh ${recorrenSsh}:
 
-ssh -i $sshKey $ecommerceSsh 'bash setup.sh' &
+#ssh -i $sshKey $ecommerceSsh 'bash setup.sh' &
 ssh -i $sshKey $entregasSsh 'bash setup.sh' &
 ssh -i $sshKey $recorrenSsh 'bash setup.sh' &

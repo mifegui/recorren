@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  eentregasUrl: "127.0.0.1:5000",
-  erecorrenUrl: "127.0.0.1:5001"
+  eentregasUrl: "54.167.36.244:5000",
+  erecorrenUrl: "3.91.214.185:5001",
 };
 
 /*
