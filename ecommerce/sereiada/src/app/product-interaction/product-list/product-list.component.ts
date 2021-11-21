@@ -14,7 +14,9 @@ export class ProductListComponent implements OnInit {
     { id: 'arro', name: 'Arroz', price: 20 },
     { id: 'feij', name: 'Feijão', price: 30 },
     { id: 'prin', name: 'Pringles', price: 31 },
-    { id: 'dete', name: 'Detergente', price: 6 },
+    { id: 'dete', name: 'Detergente', price: 12 },
+    { id: 'coca', name: 'Coca-cola', price: 6 },
+    { id: 'peps', name: 'Pepsi', price: 6 },
   ];
   constructor(
     private productServ: ProductSelectionService,

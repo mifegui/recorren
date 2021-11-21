@@ -5,14 +5,25 @@ stuff = [];
 
 @app.route('/list')
 def list():
-    return json.dumps(stuff)
+    return json.dumps(getData())
     
 @app.route('/buy', methods=['POST'])
 def buy():
     data = json.loads(request.data)
 
-    stuff.append(data)
+    saveData(data)
     return
+
+def saveData(newJson):
+    array = getData()
+    array.append(newJson)
+    with open('data.json', 'w') as f:
+        json.dump(array, f)
+
+def getData():
+    with open('data.json') as f:
+        data = json.load(f)
+    return data
 
 
 if __name__ == '__main__':
