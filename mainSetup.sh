@@ -1,14 +1,14 @@
 #!/bin/bash
 
-ecommerceUrl="184.73.130.93:80"
+#ecommerceUrl="184.73.130.93:80"
 entregasUrl="34.229.221.143:5000"
 recorrenUrl="3.88.158.166:5001"
 
-ecommerceSsh=ec2-user@${ecommerceUrl}
+#ecommerceSsh=ec2-user@${ecommerceUrl}
 entregasSsh=ec2-user@${entregasUrl}
 recorrenSsh=ec2-user@${recorrenUrl}
 
-ecommerceSsh=${ecommerceSsh/:*/}
+#ecommerceSsh=${ecommerceSsh/:*/}
 entregasSsh=${entregasSsh/:*/}
 recorrenSsh=${recorrenSsh/:*/}
 
