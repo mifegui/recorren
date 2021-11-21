@@ -10,9 +10,16 @@ import { Product } from '../shared/models/product';
 export class ProductRequestsService {
   constructor() {}
 
-  buyProducts(data: { customerEmail: string; products: Product[] }) {
+  buyProducts(data: {
+    customerEmail: string;
+    products: Product[];
+    recurr: string;
+  }) {
+    let url = '';
+    if (data.recurr) url = environment.erecorrenUrl + '/recorra';
+    else url = environment.eentregasUrl + '/buy';
     return from(
-      fetch('http://' + environment.eentregasUrl + '/buy', {
+      fetch('http://' + url, {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',

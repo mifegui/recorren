@@ -1,7 +1,7 @@
 #!/bin/bash
 
-entregasUrl="http://issoSeraSubstituido.com"
-recorrenUrl="http://Tambemserasubstituido.xyz"
+entregasUrl="127.0.0.1:5000"
+recorrenUrl="127.0.0.1:5200"
 
 yes | sudo yum install git
 yes | sudo yum install npm

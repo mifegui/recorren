@@ -1,6 +1,7 @@
 #!/bin/bash
 
-entregasUrl="https://issoSeraSubstituido.com"
+entregasUrl="127.0.0.1:5000"
+url="http://"$entregasUrl
 
 yes | sudo yum install pip
 
@@ -9,6 +10,6 @@ cd recorren/erecorren
 
 pip install Flask
 
-sed -i 's|^eentregasUrl.*|entregasUrl="'$entregasUrl'"|g' recorra.py
+sed -i 's|^eentregasUrl.*|entregasUrl="'$url'"|g' recorra.py
 
 python3 recorra.py

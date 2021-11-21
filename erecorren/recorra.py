@@ -2,7 +2,7 @@ import os
 from flask import Flask, json, request
 app = Flask(__name__)
 
-entregasUrl="https://issoSeraSubstituido.com"
+entregasUrl="http://127.0.0.1:5000"
 
 @app.route('/list')
 def list():
@@ -12,23 +12,27 @@ def list():
 def recorra():
     data = json.loads(request.data)
 
-    if (data.recurr == 'minute'):
+    recurrence = data['recurr']
+    if (recurrence == 'minute'):
         recurr = "* * * * *"
-    if (data.recurr == 'hourly'):
+    if (recurrence == 'hourly'):
         recurr = "0 * * * *"
-    if (data.recurr == 'monthly'):
+    if (recurrence == 'monthly'):
         recurr = "0 0 1 * *"
 
+    jsonedData = json.dumps(data)
+    jsonedData = jsonedData.replace('"', '\\"');
     command = ('(crontab -l 2>/dev/null; echo "' + recurr +
-                ' curl -x POST -H "Content-Type: application/json" ' + 
-                "-d '"  + json.dumps(data) + "' " + entregasUrl + "/buy" +
+                ' curl -X POST -H Content-Type:application/json ' + 
+                "-d '"  + jsonedData + "' " + entregasUrl + "/buy" +
                 '") | crontab -'
             )
     os.system(command)
+    return {}
 
 def getData():
     return os.popen('crontab -l').read()
 
 
 if __name__ == '__main__':
-   app.run(port = 5000, debug = True)
+   app.run(port = 5001, debug = True)

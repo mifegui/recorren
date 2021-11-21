@@ -13,6 +13,7 @@ import { Product } from 'src/app/shared/models/product';
 export class HeaderComponent implements OnInit {
   email: string = '';
   prods: Observable<Product[]> = of([]);
+  recurrence: string = '';
   constructor(
     private productServ: ProductSelectionService,
     private msgServ: NzMessageService,
@@ -36,6 +37,7 @@ export class HeaderComponent implements OnInit {
       .buyProducts({
         customerEmail: this.email,
         products: this.productServ.currentlySelectedProducts,
+        recurr: this.recurrence
       })
       .toPromise()
       .catch((e) => {

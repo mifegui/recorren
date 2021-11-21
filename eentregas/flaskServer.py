@@ -12,7 +12,7 @@ def buy():
     data = json.loads(request.data)
 
     saveData(data)
-    return
+    return {}
 
 def saveData(newJson):
     array = getData()

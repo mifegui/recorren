@@ -12,6 +12,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+
 
 
 const core = [HeaderComponent, FooterComponent];
@@ -29,7 +31,8 @@ const core = [HeaderComponent, FooterComponent];
     NzInputModule,
     NzMessageModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NzRadioModule
   ],
   exports: core,
 })

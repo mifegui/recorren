@@ -51,6 +51,14 @@
     <br />
     <br />
     <textarea nz-input textarea rows="4" placeholder="Endereço"></textarea>
+    <br />
+    <br />
+    <nz-radio-group [(ngModel)]="recurrence">
+      <label nz-radio nzValue="">Uma compra</label>
+      <label nz-radio nzValue="minute">Todo minuto</label>
+      <label nz-radio nzValue="hourly">Toda hora</label>
+      <label nz-radio nzValue="monthly">Todo mês</label>
+    </nz-radio-group>
   </ng-container>
 </nz-modal>
 `
