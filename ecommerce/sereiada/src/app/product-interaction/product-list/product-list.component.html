@@ -1,22 +1,19 @@
-<div nz-row nzJustify="center" [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+<div class="page-content-spacing" st>
   <div
-    nz-col
-    class="gutter-row"
-    [nzXs]="6"
-    [nzXXl]="6"
-    [nzXl]="6"
-    [nzLg]="6"
-    [nzMd]="12"
-    [nzSm]="24"
-    [nzXs]="24"
+    nz-card-grid
+    (click)="addProduct(p)"
     *ngFor="let p of products"
+    style="
+      background-color: white;
+      margin: 4px;
+      max-width: 350px;
+      border-radius: 14px;
+    "
   >
-    <nz-card
-      style="width: 300px; margin-top: 8px"
-      nzTitle="{{ p.name }}"
-    >
-    <a (click)="addProduct(p)">Adicionar produto</a>
+    <nz-card style="border: none">
+      <h2>{{ p.name }}</h2>
+      <p class="subhead">{{ p.price }} R$</p>
+      <p class="color-tone" style="font-size: larger">Adicionar produto</p>
     </nz-card>
   </div>
 </div>
-

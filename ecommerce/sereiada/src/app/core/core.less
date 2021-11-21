@@ -2,11 +2,35 @@
 
 // -------- override less variables -----------
 
-@main-color: #8ecae6;
-@secondary-color: #219ebc;
+@main-color: #ffc857;
+@secondary-color: #c5283d;
 @black: #023047;
-@tone-color: #fb8500;
+@tone-color: #255f85;
+@primary-color: @main-color;
 
 .bg-main {
-    background-color: @main-color;
+  background-color: @main-color;
+}
+
+.color-tone {
+  color: @tone-color;
+  :hover {
+    color: @main-color;
+  }
+}
+
+.very-relevant {
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.page-content-spacing {
+  margin-top: 2rem;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-secondary {
+  background-color: @secondary-color;
 }

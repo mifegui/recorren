@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/shared/models/product';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { ProductSelectionService } from '../product-selection.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,12 +16,22 @@ export class ProductListComponent implements OnInit {
     { id: 'prin', name: 'Pringles', price: 31 },
     { id: 'dete', name: 'Detergente', price: 6 },
   ];
-  constructor() {}
-
+  constructor(
+    private productServ: ProductSelectionService,
+    private notification: NzNotificationService
+  ) {}
 
   ngOnInit(): void {}
 
   addProduct(p: Product) {
-
+    this.productServ.addProduct(p);
+    this.notificateProductAdded(p);
+  }
+  private notificateProductAdded(p: Product) {
+    this.notification.create(
+      'success',
+      'Produto adicionado',
+      'Uma unidade do produto ' + p.name + ' foi adicionado'
+    );
   }
 }
