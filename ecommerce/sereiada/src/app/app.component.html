@@ -1,4 +1,7 @@
-<router-outlet></router-outlet>
-<app-header></app-header>
-
-
+<nz-layout style="height: 100%">
+  <nz-header><app-header></app-header></nz-header>
+  <nz-layout>
+    <nz-content><router-outlet></router-outlet></nz-content>
+  </nz-layout>
+  <nz-footer><app-footer></app-footer></nz-footer>
+</nz-layout>

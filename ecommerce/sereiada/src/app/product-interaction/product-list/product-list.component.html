@@ -1,0 +1,22 @@
+<div nz-row nzJustify="center" [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+  <div
+    nz-col
+    class="gutter-row"
+    [nzXs]="6"
+    [nzXXl]="6"
+    [nzXl]="6"
+    [nzLg]="6"
+    [nzMd]="12"
+    [nzSm]="24"
+    [nzXs]="24"
+    *ngFor="let p of products"
+  >
+    <nz-card
+      style="width: 300px; margin-top: 8px"
+      nzTitle="{{ p.name }}"
+    >
+    <a (click)="addProduct(p)">Adicionar produto</a>
+    </nz-card>
+  </div>
+</div>
+

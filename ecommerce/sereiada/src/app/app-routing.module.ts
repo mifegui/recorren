@@ -5,8 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./products-interaction/products-interaction.module').then(
-        (m) => m.ProductsInteractionModule
+      import('./product-interaction/product-interaction.module').then(
+        (m) => m.ProductInteractionModule
       ),
   },
 ];
