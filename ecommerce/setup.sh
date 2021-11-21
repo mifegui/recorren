@@ -1,7 +1,7 @@
 #!/bin/bash
 
-entregasUrl="54.167.36.244:5000"
-recorrenUrl="3.91.214.185:5001"
+entregasUrl="34.229.221.143:5000"
+recorrenUrl="3.88.158.166:5001"
 
 #yes | sudo yum install git
 
@@ -19,8 +19,6 @@ sed -i 's|.*eentregasUrl:.*|  eentregasUrl: "'$entregasUrl'",|g' src/environment
 sed -i 's|.*eentregasUrl:.*|  eentregasUrl: "'$entregasUrl'",|g' src/environments/environment.ts
 sed -i 's|.*erecorrenUrl:.*|  erecorrenUrl: "'$recorrenUrl'",|g' src/environments/environment.ts
 sed -i 's|.*erecorrenUrl:.*|  erecorrenUrl: "'$recorrenUrl'",|g' src/environments/environment.prod.ts
-
-export NODE_OPTIONS="--max-old-space-size=8192"
 
 #yes | npm install
 npm start -- --port 8080

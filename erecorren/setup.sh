@@ -1,6 +1,6 @@
 #!/bin/bash
 
-entregasUrl="54.167.36.244:5000"
+entregasUrl="34.229.221.143:5000"
 url="http://"$entregasUrl
 
 yes | sudo yum install git

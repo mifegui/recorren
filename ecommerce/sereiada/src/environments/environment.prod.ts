@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  eentregasUrl: "54.167.36.244:5000",
-  erecorrenUrl: "3.91.214.185:5001",
+  eentregasUrl: "34.229.221.143:5000",
+  erecorrenUrl: "3.88.158.166:5001",
 };

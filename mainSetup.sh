@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ecommerceUrl="184.73.130.93	:80"
+ecommerceUrl="184.73.130.93:80"
 entregasUrl="34.229.221.143:5000"
 recorrenUrl="3.88.158.166:5001"
 
@@ -26,3 +26,6 @@ scp -i $sshKey erecorren/setup.sh ${recorrenSsh}:
 #ssh -i $sshKey $ecommerceSsh 'bash setup.sh' &
 ssh -i $sshKey $entregasSsh 'bash setup.sh' &
 ssh -i $sshKey $recorrenSsh 'bash setup.sh' &
+
+cd ecommerce/sereiada
+bash ../setup.sh
