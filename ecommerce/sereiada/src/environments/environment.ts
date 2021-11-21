@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  eentregasUrl: "",
+  eentregasUrl: "127.0.0.1:5000",
   erecorrenUrl: ""
 };
 

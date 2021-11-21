@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { from } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../shared/models/product';
 
@@ -7,12 +8,18 @@ import { Product } from '../shared/models/product';
   providedIn: 'root',
 })
 export class ProductRequestsService {
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   buyProducts(data: { customerEmail: string; products: Product[] }) {
-    return this.http.post(environment.eentregasUrl + '/buy', {
-      customer: data.customerEmail,
-      products: data.products,
-    });
+    return from(
+      fetch('http://' + environment.eentregasUrl + '/buy', {
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        mode: 'no-cors',
+      })
+    );
   }
 }
