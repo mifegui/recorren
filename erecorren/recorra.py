@@ -2,7 +2,7 @@ import os
 from flask import Flask, json, request
 app = Flask(__name__)
 
-eentregasUrl = "http://127.0.0.1:5000"
+entregasUrl="https://issoSeraSubstituido.com"
 
 @app.route('/list')
 def list():
@@ -21,7 +21,7 @@ def recorra():
 
     command = ('(crontab -l 2>/dev/null; echo "' + recurr +
                 ' curl -x POST -H "Content-Type: application/json" ' + 
-                "-d '"  + json.dumps(data) + "' " + eentregasUrl + "/buy" +
+                "-d '"  + json.dumps(data) + "' " + entregasUrl + "/buy" +
                 '") | crontab -'
             )
     os.system(command)
