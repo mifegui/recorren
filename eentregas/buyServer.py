@@ -4,7 +4,7 @@ import pymysql
 rds_host = "database-1.cl4ej0uksgat.us-east-1.rds.amazonaws.com"
 name = "admin"
 password = "superademiro"
-db_name = "buythedb"
+db_name = "buybuybuy"
 port = 3306
 
 app = Flask(__name__)
