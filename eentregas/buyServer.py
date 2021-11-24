@@ -1,14 +1,16 @@
 from flask import Flask, json, request
 import pymysql
+import threading
 
 rds_host = "database-1.cl4ej0uksgat.us-east-1.rds.amazonaws.com"
 name = "admin"
 password = "superademiro"
-db_name = "buybuybuy"
+db_name = "superdb"
 port = 3306
 
 app = Flask(__name__)
 
+dbLock = threading.Lock()
 
 stuff = []
 
@@ -22,9 +24,13 @@ conn = pymysql.connect(
 
 
 def executeSqlReturnJson(sqlQuery):
-    cur = conn.cursor(pymysql.cursors.DictCursor);
-    cur.execute(sqlQuery)
-    return cur.fetchall()
+    dbLock.acquire();
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sqlQuery)
+            return cur.fetchall()
+    finally:
+        dbLock.release();
 
 def createDatabase():
     qry = "create database if not exists " + db_name
