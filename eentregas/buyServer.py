@@ -18,12 +18,11 @@ conn = pymysql.connect(
     passwd=password,
     connect_timeout=5,
     autocommit=True,
-    cursorclass=pymysql.cursors.DictCursor,
 )
 
 
 def executeSqlReturnJson(sqlQuery):
-    cur = conn.cursor();
+    cur = conn.cursor(pymysql.cursors.DictCursor);
     cur.execute(sqlQuery)
     return cur.fetchall()
 

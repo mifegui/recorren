@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rdsUrl="mysqlserver.cbe7tnlfrova.us-east-1.rds.amazonaws.com"
+rdsUrl="database-1.cl4ej0uksgat.us-east-1.rds.amazonaws.com"
 
 yes | sudo yum install git
 yes | sudo yum install python3-pip
