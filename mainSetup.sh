@@ -1,8 +1,9 @@
 #!/bin/bash
 
 #ecommerceUrl="184.73.130.93:80"
-entregasUrl="34.229.221.143:5000"
+entregasUrl="34.238.233.0:5000"
 recorrenUrl="3.88.158.166:5001"
+rdsUrl="mysqlserver.cbe7tnlfrova.us-east-1.rds.amazonaws.com"
 
 #ecommerceSsh=ec2-user@${ecommerceUrl}
 entregasSsh=ec2-user@${entregasUrl}
@@ -18,6 +19,8 @@ sed -i 's|^entregasUrl.*|entregasUrl="'$entregasUrl'"|g' ecommerce/setup.sh
 sed -i 's|^recorrenUrl.*|recorrenUrl="'$recorrenUrl'"|g' ecommerce/setup.sh
 
 sed -i 's|^entregasUrl.*|entregasUrl="'$entregasUrl'"|g' erecorren/setup.sh
+
+sed -i 's|^rdsUrl.*|rdsUrl="'$rdsUrl'"|g' eentregas/setup.sh
 
 #scp -i $sshKey ecommerce/setup.sh ${ecommerceSsh}:
 scp -i $sshKey eentregas/setup.sh ${entregasSsh}:

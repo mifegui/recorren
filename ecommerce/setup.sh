@@ -1,7 +1,7 @@
 #!/bin/bash
 
-entregasUrl="34.229.221.143:5000"
-recorrenUrl="3.88.158.166:5001"
+entregasUrl="34.238.233.0:5000"
+recorrenUrl=""
 
 #yes | sudo yum install git
 
