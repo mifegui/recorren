@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+  </head>
+  <body>
+    <form action="comprar" , method="POST">
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br />
+
+      <label for="address">Endereço:</label><br />
+      <input type="endereço" id="endereço" name="endereço" /><br />
+
+      <label for="produto">Escolha um produto</label>
+      <select name="produto" id="produto">
+        <option value="arroz">Arroz</option>
+        <option value="macarrão">Macarrão</option>
+        <option value="espinafre">Espinafre</option>
+        <option value="Pringles">Pringles</option>
+      </select>
+
+      <br />
+      <br />
+
+      <input type="radio" id="vez" name="recurrence" value="" checked />
+      <label for="vez">Uma vez</label><br />
+      <input type="radio" id="minuto" name="recurrence" value="minute" />
+      <label for="minuto">Todo minuto</label><br />
+      <input type="radio" id="hora" name="recurrence" value="hourly" />
+      <label for="hora">Toda hora</label><br />
+      <input type="radio" id="mes" name="recurrence" value="monthly" />
+      <label for="mes">Todo mês</label>
+
+      <br />
+      <br />
+
+      <input type="submit" value="Fazer pedido" />
+    </form>
+
+    <a href={{ eUrl }}> Entregas </a><br />
+    <a href={{ rUrl }}> Recorrência </a>
+  </body>
+</html>
