@@ -13,8 +13,8 @@ cd recorren/ecomprar
 pip3 install Flask
 sudo pip3 install requests
 
-sed -i 's|^entregasUrl.*|entregasUrl="'$entregasUrl'"|g' ecomprar.py
-sed -i 's|^entregasUrl.*|entregasUrl="'$recorrenUrl'"|g' ecomprar.py
+sed -i 's|^entregasUrl=.*|entregasUrl="'$entregasUrl'"|' ecomprar.py
+sed -i 's|^entregasUrl=.*|entregasUrl="'$recorrenUrl'"|' ecomprar.py
 
 pkill python
 python3 ecomprar.py
