@@ -1,6 +1,6 @@
 #!/bin/bash
 
-entregasUrl="100.27.31.241:5000"
+entregasUrl="52.23.206.198:5000"
 
 url="http://"$entregasUrl
 
