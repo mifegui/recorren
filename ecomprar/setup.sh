@@ -11,7 +11,7 @@ git clone "https://github.com/mifegui/recorren.git"
 cd recorren/ecomprar
 
 pip3 install Flask
-pip3 install requests
+sudo pip3 install requests
 
 sed -i 's|^entregasUrl.*|entregasUrl="'$entregasUrl'"|g' ecomprar.py
 sed -i 's|^entregasUrl.*|entregasUrl="'$recorrenUrl'"|g' ecomprar.py

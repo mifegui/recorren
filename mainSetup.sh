@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #ecommerceUrl="184.73.130.93:80"
-comprasUrl="3.83.45.245:80"
+comprasUrl="3.83.45.245:8080"
 entregasUrl="100.27.31.241:5000"
 recorrenUrl="3.94.107.80:5001"
 rdsUrl="database-1.cl4ej0uksgat.us-east-1.rds.amazonaws.com"
