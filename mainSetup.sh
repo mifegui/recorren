@@ -1,18 +1,18 @@
 #!/bin/bash
 
 #ecommerceUrl="184.73.130.93:80"
-comprasUrl="184.73.130.93:80"
-entregasUrl="34.238.233.0:5000"
-recorrenUrl="54.237.174.74:5001"
+comprasUrl="3.83.45.245:80"
+entregasUrl="100.27.31.241:5000"
+recorrenUrl="3.94.107.80:5001"
 rdsUrl="database-1.cl4ej0uksgat.us-east-1.rds.amazonaws.com"
 
 #ecommerceSsh=ec2-user@${ecommerceUrl}
-comprasSsh=ec2-user@${ecommerceUrl}
+comprasSsh=ec2-user@${comprasUrl}
 entregasSsh=ec2-user@${entregasUrl}
 recorrenSsh=ec2-user@${recorrenUrl}
 
 #ecommerceSsh=${ecommerceSsh/:*/}
-comprasSsh=${ecommerceSsh/:*/}
+comprasSsh=${comprasSsh/:*/}
 entregasSsh=${entregasSsh/:*/}
 recorrenSsh=${recorrenSsh/:*/}
 
