@@ -6,7 +6,7 @@ Isto aqui é um repositório que armazena três serviços para montar uma lógic
 
 ![Foto da página inicial do ecommerce com quase todos as funcionalidades sendo mostradas](https://i.ibb.co/7rqQy42/super-Print.png)
 
-- eentregas/ É a pasta que simula uma API de processamento de compras e entregas. Feita em Flask
+- eentregas/ É a pasta que simula uma API de processamento de compras e entregas. Feita em Flask e usa uma database da RDS da AWS par armazenar os pedidos
 
 - erecorren/ É a pasta que simula a API de recorrência que de tempos em tempos faz um pedido para a API de eentregas conforme o que o cliente pediu no ecommerce. Também feita em Flask
 
@@ -22,6 +22,8 @@ A ideia era rodar esses três componentes em três máquinas na AWS. Entretanto,
 Sobre configurar as máquinas, como os componentes já foram programados com práticas de segurança (e práticas de programação no geral...) nada boas por falta de temop e necessidade, você pode só criar duas instâncias na EC2 com acesso total à todas as portas na política de segurança.
 
 Criado as instâncias, coloque o ip público das duas nas variáveis em mainSetup.sh. *Não mude a porta que já está no arquivo*. O script fara substituições em alguns arquivos para os três serviços saberem qual é o ip de quem.
+
+Crie também uma instância de mysql na RDS da amazon. Coloque o endpoint dela no arquivo mainSetup.sh
 
 Coloque sua chave da AWS (e.g. labsuser.pem) na pasta raiz, do lado do mainSetup.sh. Mude o nome dela para `vockey.pem`. Lembre de colocar um nível de acesso razoável para o arquivo (`chmod 600 vockey.pem`) para a AWS não reclamar.
 
